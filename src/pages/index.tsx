@@ -1,7 +1,5 @@
-import { useRouter } from "next/router";
+import Link from "next/link";
 
 export default function Home() {
-  const router = useRouter();
-  router.push("/user");
+  return (<a href="/user">Go to user page</a>)
 }
-

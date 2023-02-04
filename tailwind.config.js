@@ -1,5 +1,8 @@
+const { readBuilderProgram } = require('typescript');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: [
       "./src/**/*.{js,ts,jsx,tsx}",
   ],
@@ -18,8 +21,8 @@ module.exports = {
         "yellow-dark": "#E5AC19",
         "red-light": "#FDA4AF",
         "red-mid": "#E1453A",
-        "red-dark": "#B91C1C"
-      }
+        "red-dark": "#B91C1C",
+      },
     },
   },
   plugins: [],
