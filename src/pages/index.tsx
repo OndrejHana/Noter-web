@@ -1,5 +1,25 @@
-import Link from "next/link";
+import customGetServerSession from "@/lib/session";
+import { GetServerSidePropsContext } from "next"
 
-export default function Home() {
-  return (<a href="/user">Go to user page</a>)
+
+export async function getServerSideProps(ctx: GetServerSidePropsContext) {
+  const session = await customGetServerSession(ctx);
+
+  if (!session) {
+    console.log("no session");
+
+    return {
+      redirect: {
+        destination: "/api/auth/signin",
+        permanent: false,
+      },
+    };
+  };
+
+  return {
+    redirect: {
+      destination: "/app/homepage",
+      permanent: false,
+    },
+  };
 }
