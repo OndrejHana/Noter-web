@@ -1,7 +1,6 @@
 import customGetServerSession from "@/lib/session";
 import { GetServerSidePropsContext } from "next"
 
-
 export async function getServerSideProps(ctx: GetServerSidePropsContext) {
   const session = await customGetServerSession(ctx);
 
@@ -23,3 +22,5 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
     },
   };
 }
+
+export default function App() { }
