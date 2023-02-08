@@ -1,12 +1,17 @@
 import Editor from "@/components/editor/Editor";
 import { GetServerSidePropsContext } from "next";
+import { Button } from "@/components/Button";
 
 export function getServerSideProps(ctx: GetServerSidePropsContext) {
-  return { 
+  return {
     props: {}
   }
 }
 
 export default function Homepage() {
-  return (<Editor/>);
+  return (
+    <div>
+      <Editor />
+    </div>
+  );
 }

@@ -1,58 +1,34 @@
+import { customEditorTheme } from "./customEditorTheme";
+
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
-import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
-import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
-import { AutoFocusPlugin } from "@lexical/react/LexicalAutoFocusPlugin";
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
-import { HeadingNode, QuoteNode } from "@lexical/rich-text";
-import { TableCellNode, TableNode, TableRowNode } from "@lexical/table";
-import { ListItemNode, ListNode } from "@lexical/list";
-import { CodeHighlightNode, CodeNode } from "@lexical/code";
-import { AutoLinkNode, LinkNode } from "@lexical/link";
-import { LinkPlugin } from "@lexical/react/LexicalLinkPlugin";
-import { ListPlugin } from "@lexical/react/LexicalListPlugin";
-import { MarkdownShortcutPlugin } from "@lexical/react/LexicalMarkdownShortcutPlugin";
-import { TRANSFORMERS } from "@lexical/markdown";
+
+import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 
 function Placeholder() {
-  return <div className="editor-placeholder">Write here!</div>;
+  return <div className="editor-placeholder">Write here...</div>;
 }
 
-const editorConfig = {
-  namespace: "i dunno",
-  onError(error: Error) {
-    throw error;
+const initialConfig = {
+  namespace: "TextEditor",
+  theme: {
+    ltr: "bg-blue-mid"
   },
-  nodes: [
-    HeadingNode,
-    ListNode,
-    ListItemNode,
-    QuoteNode,
-    CodeNode,
-    CodeHighlightNode,
-    TableNode,
-    TableCellNode,
-    TableRowNode,
-    AutoLinkNode,
-    LinkNode
-  ]
-};
+  onError: (err: Error) => console.log(err),
+}
 
 export default function Editor() {
   return (
-    <LexicalComposer initialConfig={editorConfig}>
-    <div className="editor-container">
+    <LexicalComposer initialConfig={initialConfig} >
+      <div className="editor-container">
+        {/* <ToolbarPlugin/> */}
         <div className="editor-inner">
-          <RichTextPlugin
+          <RichTextPlugin 
             contentEditable={<ContentEditable className="editor-input" />}
-            placeholder = {<Placeholder/>}
+            placeholder={<Placeholder/>}
             ErrorBoundary={LexicalErrorBoundary}
           />
-          <HistoryPlugin />
-          <AutoFocusPlugin />
-          <ListPlugin />
-          <LinkPlugin />
-          <MarkdownShortcutPlugin transformers={TRANSFORMERS} />
         </div>
       </div>
     </LexicalComposer>
