@@ -10,7 +10,7 @@ export function getServerSideProps(ctx: GetServerSidePropsContext) {
 
 export default function Homepage() {
   return (
-    <div>
+    <div className="bg-gray-darker">
       <Editor />
     </div>
   );
