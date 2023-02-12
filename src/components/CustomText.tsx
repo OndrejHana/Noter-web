@@ -29,7 +29,7 @@ const style = cva(["text-black", "dark:text-white", "opacity-80", "m-1"], {
       "large-normal": ["opacity-100", "font-normal"],
       "large-bold": ["opacity-100", "font-semibold"],
       "body-light": ["opacity-80", "font-light"],
-      "body-normal": ["opacity-80", "font-normal"],
+      "body-normal": ["opacity-80", "font-normal", "text-base"],
       "body-bold": ["opacity-80", "font-semibold"],
     },
   },

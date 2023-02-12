@@ -13,9 +13,11 @@ import { TableCellNode, TableNode, TableRowNode } from "@lexical/table";
 import { ListItemNode, ListNode } from "@lexical/list";
 import { CodeHighlightNode, CodeNode } from "@lexical/code";
 import { AutoLinkNode, LinkNode } from "@lexical/link";
+import ToolbarPlugin from "./plugins/ToolbarPlugin";
+import StatusBarPlugin from "./plugins/StatuBarPlugin";
 
 function Placeholder() {
-  return <div className="editor-placeholder">Write here...</div>;
+  return <div className="editor-placeholder"></div>;
 }
 
 const initialConfig = {
@@ -40,11 +42,12 @@ const initialConfig = {
 export default function Editor() {
   return (
     <LexicalComposer initialConfig={initialConfig} >
-      <div className="editor-container  ">
-        {/* <ToolbarPlugin/> */}
+      <div className="editor-container max-w-7xl h-96 dark:bg-gray-dark rounded-lg ">
+        <ToolbarPlugin />
+        <StatusBarPlugin />
         <div className="editor-inner">
           <RichTextPlugin 
-            contentEditable={<ContentEditable className="editor-input relative" />}
+            contentEditable={<ContentEditable className="editor-input relative p-2 h-[324px] outline-none" />}
             placeholder={<Placeholder/>}
             ErrorBoundary={LexicalErrorBoundary}
           />

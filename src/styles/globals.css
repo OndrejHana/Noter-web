@@ -2,17 +2,9 @@
   color-scheme: dark;
 }
 
-.editor-placeholder {
-  color: #999;
-  overflow: hidden;
-  position: absolute;
-  text-overflow: ellipsis;
-  top: 15px;
-  left: 10px;
-  font-size: 15px;
-  user-select: none;
-  display: inline-block;
-  pointer-events: none;
+i.format-bold {
+  background-color: aqua;
+  /* background-image: url('/public/icons/format_bold.svg'); */
 }
 
 @tailwind base;
