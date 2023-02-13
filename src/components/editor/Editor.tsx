@@ -42,12 +42,12 @@ const initialConfig = {
 export default function Editor() {
   return (
     <LexicalComposer initialConfig={initialConfig} >
-      <div className="editor-container max-w-7xl h-96 dark:bg-gray-dark rounded-lg ">
+      <div className="editor-container max-w-6xl h-96 dark:bg-gray-dark rounded-lg ">
         <ToolbarPlugin />
         <StatusBarPlugin />
         <div className="editor-inner">
           <RichTextPlugin 
-            contentEditable={<ContentEditable className="editor-input relative p-2 h-[324px] outline-none" />}
+            contentEditable={<ContentEditable className="editor-input p-2 h-[324px] outline-none" />}
             placeholder={<Placeholder/>}
             ErrorBoundary={LexicalErrorBoundary}
           />

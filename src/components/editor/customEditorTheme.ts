@@ -3,7 +3,7 @@ export const customEditorTheme = {
   rtl: "text-right",
   placeholder: "editor-placeholder",
   paragraph: "editor-paragraph text-black dark:text-white opacity-80",
-  quote: "editor-quote",
+  quote: "dark:text-gray-light opacity-80 italic",
   heading: {
     h1: "text-black dark:text-white font-semibold text-4xl leading-10 dark:opacity-80",
     h2: "text-black dark:text-white opacity-80 font-medium text-3xl leading-9",
@@ -11,10 +11,10 @@ export const customEditorTheme = {
   },
   list: {
     nested: {
-      listitem: "editor-nested-listitem",
+      listitem: "dark:text-white list-decimal",
     },
-    ol: "editor-list-ol",
-    ul: "editor-list-ul",
+    ol: "list-decimal ml-4 dark:text-white",
+    ul: "list-disc ml-4 dark:text-white",
     listitem: "editor-listItem",
     listitemChecked: "editor-listItemChecked",
     listitemUnchecked: "editor-listItemUnchecked",
